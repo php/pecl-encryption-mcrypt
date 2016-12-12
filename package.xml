@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.7" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+    <name>mcrypt</name>
+    <channel>pecl.php.net</channel>
+    <summary>Bindings for the libmcrypt library</summary>
+    <description>
+	    Provides bindings for the unmaintained libmcrypt.
+    </description>
+    <lead>
+        <name>Derick Rethans</name>
+        <user>derick</user>
+        <email>derick@php.net</email>
+        <active>no</active>
+    </lead>
+    <lead>
+        <name>Sascha Schumann</name>
+        <user>sas</user>
+        <email>sascha@schumann.cx</email>
+        <active>no</active>
+    </lead>
+    <helper>
+        <name>Leigh</name>
+        <user>leigh</user>
+        <email>leigh@php.net</email>
+        <active>no</active>
+    </helper>
+    <date>2016-12-12</date>
+    <version>
+        <release>7.1.0</release>
+        <api>2.5.8</api>
+    </version>
+    <stability>
+        <release>snapshot</release>
+        <api>snapshot</api>
+    </stability>
+    <license uri="http://www.php.net/license">PHP License</license>
+    <notes>
+        - The mcrypt extension as it was in PHP 7.1, before it was removed from core.
+    </notes>
+    <contents>
+        <dir name="/">
+            <file role="src" name="config.m4"/>
+            <file role="src" name="config.w32"/>
+            <file role="src" name="mcrypt.c"/>
+            <file role="src" name="mcrypt_filter.c"/>
+            <file role="src" name="php_mcrypt.h"/>
+            <file role="src" name="php_mcrypt_filter.h"/>
+            <file role="doc" name="LICENSE"/>
+            <dir name="tests">
+                <file role="test" name="ssh2_auth.phpt"/>
+                <file role="test" name="blowfish.phpt"/>
+                <file role="test" name="bug35496.phpt"/>
+                <file role="test" name="bug37595.phpt"/>
+                <file role="test" name="bug41252.phpt"/>
+                <file role="test" name="bug43143.phpt"/>
+                <file role="test" name="bug46010.phpt"/>
+                <file role="test" name="bug49738.phpt"/>
+                <file role="test" name="bug55169.phpt"/>
+                <file role="test" name="bug70625.phpt"/>
+                <file role="test" name="bug8040.phpt"/>
+                <file role="test" name="mcrypt_cbc_3des_decrypt.phpt"/>
+                <file role="test" name="mcrypt_cbc_3des_encrypt.phpt"/>
+                <file role="test" name="mcrypt_cbc.phpt"/>
+                <file role="test" name="mcrypt_cfb.phpt"/>
+                <file role="test" name="mcrypt_create_iv.phpt"/>
+                <file role="test" name="mcrypt_decrypt_3des_cbc.phpt"/>
+                <file role="test" name="mcrypt_decrypt_3des_ecb.phpt"/>
+                <file role="test" name="mcrypt_decrypt_error.phpt"/>
+                <file role="test" name="mcrypt_decrypt.phpt"/>
+                <file role="test" name="mcrypt_decrypt_variation1.phpt"/>
+                <file role="test" name="mcrypt_decrypt_variation2.phpt"/>
+                <file role="test" name="mcrypt_decrypt_variation3.phpt"/>
+                <file role="test" name="mcrypt_decrypt_variation4.phpt"/>
+                <file role="test" name="mcrypt_decrypt_variation5.phpt"/>
+                <file role="test" name="mcrypt_ecb_3des_decrypt.phpt"/>
+                <file role="test" name="mcrypt_ecb_3des_encrypt.phpt"/>
+                <file role="test" name="mcrypt_ecb.phpt"/>
+                <file role="test" name="mcrypt_enc_get_algorithms_name.phpt"/>
+                <file role="test" name="mcrypt_enc_get_block_size.phpt"/>
+                <file role="test" name="mcrypt_enc_get_iv_size.phpt"/>
+                <file role="test" name="mcrypt_enc_get_key_size.phpt"/>
+                <file role="test" name="mcrypt_enc_get_mode_name.phpt"/>
+                <file role="test" name="mcrypt_enc_get_supported_key_sizes.phpt"/>
+                <file role="test" name="mcrypt_enc_is_block_algorithm_mode.phpt"/>
+                <file role="test" name="mcrypt_enc_is_block_algorithm.phpt"/>
+                <file role="test" name="mcrypt_enc_is_block_mode.phpt"/>
+                <file role="test" name="mcrypt_encrypt_3des_cbc.phpt"/>
+                <file role="test" name="mcrypt_encrypt_3des_ecb.phpt"/>
+                <file role="test" name="mcrypt_encrypt_error.phpt"/>
+                <file role="test" name="mcrypt_encrypt_variation1.phpt"/>
+                <file role="test" name="mcrypt_encrypt_variation2.phpt"/>
+                <file role="test" name="mcrypt_encrypt_variation3.phpt"/>
+                <file role="test" name="mcrypt_encrypt_variation4.phpt"/>
+                <file role="test" name="mcrypt_encrypt_variation5.phpt"/>
+                <file role="test" name="mcrypt_enc_self_test.phpt"/>
+                <file role="test" name="mcrypt_filters.phpt"/>
+                <file role="test" name="mcrypt_get_block_size.phpt"/>
+                <file role="test" name="mcrypt_get_cipher_name.phpt"/>
+                <file role="test" name="mcrypt_get_iv_size.phpt"/>
+                <file role="test" name="mcrypt_get_key_size.phpt"/>
+                <file role="test" name="mcrypt_list_algorithms.phpt"/>
+                <file role="test" name="mcrypt_list_modes.phpt"/>
+                <file role="test" name="mcrypt_module_get_algo_block_size.phpt"/>
+                <file role="test" name="mcrypt_module_get_algo_key_size.phpt"/>
+                <file role="test" name="mcrypt_module_get_supported_key_sizes.phpt"/>
+                <file role="test" name="mcrypt_module_is_block_algorithm_mode.phpt"/>
+                <file role="test" name="mcrypt_module_is_block_algorithm.phpt"/>
+                <file role="test" name="mcrypt_module_is_block_mode.phpt"/>
+                <file role="test" name="mcrypt_module_open.phpt"/>
+                <file role="test" name="mcrypt_module_self_test.phpt"/>
+                <file role="test" name="mcrypt_ofb.phpt"/>
+                <file role="test" name="mcrypt_rijndael128_128BitKey.phpt"/>
+                <file role="test" name="mcrypt_rijndael128_256BitKey.phpt"/>
+                <file role="test" name="vectors.txt"/>
+            </dir>
+        </dir>
+    </contents>
+    <dependencies>
+        <required>
+            <php>
+                <min>7.2.0</min>
+                <max>7.3.0</max>
+            </php>
+            <pearinstaller>
+                <min>1.4.0</min>
+            </pearinstaller>
+        </required>
+    </dependencies>
+    <providesextension>mcrypt</providesextension>
+    <extsrcrelease>
+        <configureoption name="with-mcrypt" default="autodetect" prompt="libmcrypt prefix?"/>
+    </extsrcrelease>
+    <changelog>
+        <release>
+            <date>2016-12-12</date>
+            <version>
+                <release>7.1.0</release>
+                <api>2.5.8</api>
+            </version>
+            <notes>
+                - Migrated extension from core to PECL.
+            </notes>
+        </release>
+    </changelog>
+</package>

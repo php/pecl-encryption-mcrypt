@@ -18,12 +18,12 @@
         <email>sascha@schumann.cx</email>
         <active>no</active>
     </lead>
-    <helper>
+    <lead>
         <name>Leigh</name>
         <user>leigh</user>
         <email>leigh@php.net</email>
-        <active>no</active>
-    </helper>
+        <active>yes</active>
+    </lead>
     <date>2016-12-12</date>
     <version>
         <release>1.0.0</release>

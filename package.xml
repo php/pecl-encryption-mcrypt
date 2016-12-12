@@ -118,7 +118,7 @@
     <dependencies>
         <required>
             <php>
-                <min>7.2.0</min>
+                <min>7.1.0</min>
                 <max>7.3.0</max>
                 <exclude>7.3.0</exclude>
             </php>

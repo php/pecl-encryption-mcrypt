@@ -13,12 +13,11 @@ Bug #8040 (MCRYPT_MODE_* do not seem to exist)
 
 	define ("CIPHER", MCRYPT_TWOFISH);
 	define ("MODE2", MCRYPT_MODE_CBC);
-	define ("MODE3", MCRYPT_CBC);
 
-	printf ("cipher=".CIPHER. " mode1=".MODE2. " mode2=". MODE3."\n");
+	printf ("cipher=".CIPHER. " mode1=".MODE2."\n");
 ?>
---EXPECT--
+--EXPECTF--
 twofish
 cbc
 cbc
-cipher=twofish mode1=cbc mode2=MCRYPT_CBC
+cipher=twofish mode1=cbc

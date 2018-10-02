@@ -16,7 +16,6 @@
    |          Derick Rethans <derick@derickrethans.nl>                    |
    +----------------------------------------------------------------------+
  */
-/* $Id$ */
 
 #ifndef PHP_MCRYPT_H
 #define PHP_MCRYPT_H

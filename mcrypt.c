@@ -16,7 +16,6 @@
    |          Derick Rethans <derick@derickrethans.nl>                    |
    +----------------------------------------------------------------------+
  */
-/* $Id$ */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

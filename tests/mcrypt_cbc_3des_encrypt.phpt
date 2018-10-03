@@ -1,17 +1,17 @@
 --TEST--
-Test mcrypt_cbc() function : basic functionality 
+Test mcrypt_cbc() function : basic functionality
 --SKIPIF--
-<?php 
+<?php
 if (!extension_loaded("mcrypt")) {
-	print "skip - mcrypt extension not loaded"; 
-}	 
+	print "skip - mcrypt extension not loaded";
+}
 ?>
 --FILE--
 <?php
 /* Prototype  : string mcrypt_cbc(int cipher, string key, string data, int mode, string iv)
- * Description: CBC crypt/decrypt data using key key with cipher cipher starting with iv 
+ * Description: CBC crypt/decrypt data using key key with cipher cipher starting with iv
  * Source code: ext/mcrypt/mcrypt.c
- * Alias to functions: 
+ * Alias to functions:
  */
 
 $cipher = MCRYPT_TRIPLEDES;
@@ -19,14 +19,14 @@ $data = "This is the secret message which must be encrypted";
 
 // tripledes uses keys with exactly 192 bits (24 bytes)
 $keys = array(
-   '12345678', 
-   '12345678901234567890', 
-   '123456789012345678901234', 
+   '12345678',
+   '12345678901234567890',
+   '123456789012345678901234',
    '12345678901234567890123456');
 // tripledes is a block cipher of 64 bits (8 bytes)
 $ivs = array(
-   '1234', 
-   '12345678', 
+   '1234',
+   '12345678',
    '123456789');
 
 
@@ -37,7 +37,7 @@ foreach ($keys as $key) {
    var_dump(bin2hex(mcrypt_encrypt($cipher, $key, $data, MCRYPT_MODE_CBC, $iv)));
 }
 
-$key = '123456789012345678901234';  
+$key = '123456789012345678901234';
 echo "\n--- testing different iv lengths\n";
 foreach ($ivs as $iv) {
    echo "\niv length=".strlen($iv)."\n";

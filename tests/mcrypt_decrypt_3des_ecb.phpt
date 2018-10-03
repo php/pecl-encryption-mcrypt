@@ -1,17 +1,17 @@
 --TEST--
-Test mcrypt_decrypt() function : basic functionality 
+Test mcrypt_decrypt() function : basic functionality
 --SKIPIF--
-<?php 
+<?php
 if (!extension_loaded("mcrypt")) {
-	print "skip - mcrypt extension not loaded"; 
-}	 
+	print "skip - mcrypt extension not loaded";
+}
 ?>
 --FILE--
 <?php
 /* Prototype  : string mcrypt_decrypt(string cipher, string key, string data, string mode, string iv)
- * Description: OFB crypt/decrypt data using key key with cipher cipher starting with iv 
+ * Description: OFB crypt/decrypt data using key key with cipher cipher starting with iv
  * Source code: ext/mcrypt/mcrypt.c
- * Alias to functions: 
+ * Alias to functions:
  */
 
 echo "*** Testing mcrypt_decrypt() : basic functionality ***\n";
@@ -23,9 +23,9 @@ $mode = MCRYPT_MODE_ECB;
 
 // tripledes uses keys with exactly 192 bits (24 bytes)
 $keys = array(
-   '12345678', 
-   '12345678901234567890', 
-   '123456789012345678901234', 
+   '12345678',
+   '12345678901234567890',
+   '123456789012345678901234',
    '12345678901234567890123456'
 );
 $data1 = array(
@@ -36,8 +36,8 @@ $data1 = array(
 );
 // tripledes is a block cipher of 64 bits (8 bytes)
 $ivs = array(
-   '1234', 
-   '12345678', 
+   '1234',
+   '12345678',
    '123456789'
 );
 $data2 = array(
@@ -52,7 +52,7 @@ for ($i = 0; $i < sizeof($keys); $i++) {
    special_var_dump(mcrypt_decrypt($cipher, $keys[$i], base64_decode($data1[$i]), $mode));
 }
 
-$key = '123456789012345678901234';  
+$key = '123456789012345678901234';
 echo "\n--- testing different iv lengths\n";
 for ($i = 0; $i < sizeof($ivs); $i++) {
    echo "\niv length=".strlen($ivs[$i])."\n";
@@ -61,7 +61,7 @@ for ($i = 0; $i < sizeof($ivs); $i++) {
 
 function special_var_dump($str) {
    var_dump(bin2hex($str));
-}  
+}
 ?>
 ===DONE===
 --EXPECTF--

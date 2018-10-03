@@ -13,7 +13,7 @@ AC_DEFUN([PHP_MCRYPT_CHECK_VERSION],[
     AC_MSG_ERROR(libmcrypt version 2.5.6 or greater required.)
   ])
   CPPFLAGS=$old_CPPFLAGS
-])  
+])
 
 
 PHP_ARG_WITH(mcrypt, for mcrypt support,
@@ -30,7 +30,7 @@ if test "$PHP_MCRYPT" != "no"; then
 
   PHP_MCRYPT_CHECK_VERSION
 
-  PHP_CHECK_LIBRARY(mcrypt, mcrypt_module_open, 
+  PHP_CHECK_LIBRARY(mcrypt, mcrypt_module_open,
   [
     PHP_ADD_LIBRARY(ltdl,, MCRYPT_SHARED_LIBADD)
     AC_DEFINE(HAVE_LIBMCRYPT,1,[ ])

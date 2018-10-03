@@ -1,0 +1,2 @@
+# Treat binary PHP test files as text when displaying diffs
+*.phpt diff

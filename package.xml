@@ -138,6 +138,16 @@
                 <api>1.0.0</api>
             </version>
             <notes>
+                - Changed maximum version to 7.3.x.
+            </notes>
+        </release>
+        <release>
+            <date>2016-12-13</date>
+            <version>
+                <release>1.0.0</release>
+                <api>1.0.0</api>
+            </version>
+            <notes>
                 - Migrated extension from core to PECL.
             </notes>
         </release>

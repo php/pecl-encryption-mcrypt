@@ -26,8 +26,6 @@ mkinstalldirs
 modules
 run-tests.php
 
-tests-output.txt
-
 *.la
 *.lo
 *.o

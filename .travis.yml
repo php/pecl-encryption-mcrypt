@@ -1,0 +1,18 @@
+sudo: false
+language: php
+
+php:
+  - 7.2
+  - 7.3
+
+addons:
+  apt:
+    packages:
+      - libmcrypt-dev
+    update: true
+
+before_script:
+  - phpize && ./configure && make
+
+script:
+  - make test REPORT_EXIT_STATUS=1 NO_INTERACTION=1 TESTS="--show-all"

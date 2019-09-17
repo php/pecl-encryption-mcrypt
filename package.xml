@@ -24,18 +24,18 @@
         <email>leigh@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2019-01-10</date>
+    <date>2019-09-17</date>
     <version>
-        <release>1.0.2</release>
+        <release>1.0.3</release>
         <api>1.0.0</api>
     </version>
     <stability>
-        <release>snapshot</release>
+        <release>stable</release>
         <api>stable</api>
     </stability>
     <license uri="http://www.php.net/license">PHP License</license>
     <notes>
-        - The mcrypt extension as it was in PHP 7.1, before it was removed from core.
+        - Addressed Windows build issues
     </notes>
     <contents>
         <dir name="/">
@@ -118,8 +118,8 @@
         <required>
             <php>
                 <min>7.2.0</min>
-                <max>7.4.0</max>
-                <exclude>7.4.0</exclude>
+                <max>8.0.0</max>
+                <exclude>8.0.0</exclude>
             </php>
             <pearinstaller>
                 <min>1.4.0</min>
@@ -130,26 +130,4 @@
     <extsrcrelease>
         <configureoption name="with-mcrypt" default="autodetect" prompt="libmcrypt prefix?"/>
     </extsrcrelease>
-    <changelog>
-        <release>
-            <date>2019-01-10</date>
-            <version>
-                <release>1.0.2</release>
-                <api>1.0.0</api>
-            </version>
-            <notes>
-                - Changed the upper limit of required version from 7.2.x to 7.3.x.
-            </notes>
-        </release>
-        <release>
-            <date>2016-12-13</date>
-            <version>
-                <release>1.0.1</release>
-                <api>1.0.0</api>
-            </version>
-            <notes>
-                - Migrated extension from core to PECL.
-            </notes>
-        </release>
-    </changelog>
 </package>

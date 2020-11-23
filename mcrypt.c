@@ -629,7 +629,7 @@ PHP_FUNCTION(mcrypt_generic)
 
 	if (data_len == 0) {
 		php_error_docref(NULL, E_WARNING, "An empty string was passed");
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 
 	if (data_len > INT_MAX) {
@@ -683,7 +683,7 @@ PHP_FUNCTION(mdecrypt_generic)
 
 	if (data_len == 0) {
 		php_error_docref(NULL, E_WARNING, "An empty string was passed");
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 
 	/* Check blocksize */
@@ -762,10 +762,10 @@ PHP_FUNCTION(mcrypt_generic_deinit)
 
 	if (mcrypt_generic_deinit(pm->td) < 0) {
 		php_error_docref(NULL, E_WARNING, "Could not terminate encryption specifier");
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 	pm->init = 0;
-	RETURN_TRUE
+	RETURN_TRUE;
 }
 /* }}} */
 
@@ -776,9 +776,9 @@ PHP_FUNCTION(mcrypt_enc_is_block_algorithm_mode)
 	MCRYPT_GET_TD_ARG
 
 	if (mcrypt_enc_is_block_algorithm_mode(pm->td) == 1) {
-		RETURN_TRUE
+		RETURN_TRUE;
 	} else {
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 }
 /* }}} */
@@ -790,9 +790,9 @@ PHP_FUNCTION(mcrypt_enc_is_block_algorithm)
 	MCRYPT_GET_TD_ARG
 
 	if (mcrypt_enc_is_block_algorithm(pm->td) == 1) {
-		RETURN_TRUE
+		RETURN_TRUE;
 	} else {
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 }
 /* }}} */
@@ -804,9 +804,9 @@ PHP_FUNCTION(mcrypt_enc_is_block_mode)
 	MCRYPT_GET_TD_ARG
 
 	if (mcrypt_enc_is_block_mode(pm->td) == 1) {
-		RETURN_TRUE
+		RETURN_TRUE;
 	} else {
-		RETURN_FALSE
+		RETURN_FALSE;
 	}
 }
 /* }}} */

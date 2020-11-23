@@ -1,18 +1,26 @@
-sudo: false
 language: php
-
+dist: bionic
 php:
   - 7.2
   - 7.3
-
+  - 7.4
+  - nightly
+sudo: false
+matrix:
+  fast_finish: true
+env:
+  - REPORT_EXIT_STATUS=1 NO_INTERACTION=1
 addons:
   apt:
     packages:
       - libmcrypt-dev
     update: true
-
-before_script:
-  - phpize && ./configure && make
-
-script:
-  - make test REPORT_EXIT_STATUS=1 NO_INTERACTION=1 TESTS="--show-all"
+install:
+  - phpize
+  - ./configure
+  - make
+script: TEST_PHP_EXECUTABLE=$(which php) php -n
+  -d open_basedir= -d output_buffering=0 -d memory_limit=-1
+  run-tests.php -n
+  -d extension_dir=modules -d extension=mcrypt.so --show-diff
+  tests

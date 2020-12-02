@@ -480,7 +480,8 @@ PHP_MINFO_FUNCTION(mcrypt) /* {{{ */
 	php_info_print_table_start();
 	php_info_print_table_header(2, "mcrypt support", "enabled");
 	php_info_print_table_header(2, "mcrypt_filter support", "enabled");
-	php_info_print_table_row(2, "Version", LIBMCRYPT_VERSION);
+	php_info_print_table_row(2, "Extension version", PHP_MCRYPT_VERSION);
+	php_info_print_table_row(2, "Library version", LIBMCRYPT_VERSION);
 	php_info_print_table_row(2, "Api No", mcrypt_api_no);
 	php_info_print_table_row(2, "Supported ciphers", ZSTR_VAL(tmp1.s));
 	php_info_print_table_row(2, "Supported modes", ZSTR_VAL(tmp2.s));

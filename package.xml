@@ -24,9 +24,9 @@
         <email>leigh@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2019-09-17</date>
+    <date>2020-12-02</date>
     <version>
-        <release>1.0.3</release>
+        <release>1.0.4</release>
         <api>1.0.0</api>
     </version>
     <stability>
@@ -35,7 +35,7 @@
     </stability>
     <license uri="http://www.php.net/license">PHP License</license>
     <notes>
-        - Addressed Windows build issues
+        - Make release to advertise PHP 8 support, which it already had.
     </notes>
     <contents>
         <dir name="/">
@@ -64,13 +64,7 @@
                 <file role="test" name="mcrypt_create_iv.phpt"/>
                 <file role="test" name="mcrypt_decrypt_3des_cbc.phpt"/>
                 <file role="test" name="mcrypt_decrypt_3des_ecb.phpt"/>
-                <file role="test" name="mcrypt_decrypt_error.phpt"/>
                 <file role="test" name="mcrypt_decrypt.phpt"/>
-                <file role="test" name="mcrypt_decrypt_variation1.phpt"/>
-                <file role="test" name="mcrypt_decrypt_variation2.phpt"/>
-                <file role="test" name="mcrypt_decrypt_variation3.phpt"/>
-                <file role="test" name="mcrypt_decrypt_variation4.phpt"/>
-                <file role="test" name="mcrypt_decrypt_variation5.phpt"/>
                 <file role="test" name="mcrypt_ecb_3des_decrypt.phpt"/>
                 <file role="test" name="mcrypt_ecb_3des_encrypt.phpt"/>
                 <file role="test" name="mcrypt_ecb.phpt"/>
@@ -85,12 +79,6 @@
                 <file role="test" name="mcrypt_enc_is_block_mode.phpt"/>
                 <file role="test" name="mcrypt_encrypt_3des_cbc.phpt"/>
                 <file role="test" name="mcrypt_encrypt_3des_ecb.phpt"/>
-                <file role="test" name="mcrypt_encrypt_error.phpt"/>
-                <file role="test" name="mcrypt_encrypt_variation1.phpt"/>
-                <file role="test" name="mcrypt_encrypt_variation2.phpt"/>
-                <file role="test" name="mcrypt_encrypt_variation3.phpt"/>
-                <file role="test" name="mcrypt_encrypt_variation4.phpt"/>
-                <file role="test" name="mcrypt_encrypt_variation5.phpt"/>
                 <file role="test" name="mcrypt_enc_self_test.phpt"/>
                 <file role="test" name="mcrypt_filters.phpt"/>
                 <file role="test" name="mcrypt_get_block_size.phpt"/>
@@ -118,8 +106,8 @@
         <required>
             <php>
                 <min>7.2.0</min>
-                <max>8.0.0</max>
-                <exclude>8.0.0</exclude>
+                <max>8.1.0</max>
+                <exclude>8.1.0</exclude>
             </php>
             <pearinstaller>
                 <min>1.4.0</min>

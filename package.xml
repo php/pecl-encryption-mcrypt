@@ -24,6 +24,11 @@
         <email>leigh@php.net</email>
         <active>yes</active>
     </lead>
+    <date>2023-02-23</date>
+    <version>
+        <release>1.0.6</release>
+        <api>1.0.0</api>
+    </version>
     <date>2022-04-14</date>
     <version>
         <release>1.0.5</release>
@@ -106,8 +111,8 @@
         <required>
             <php>
                 <min>7.2.0</min>
-                <max>8.2.0</max>
-                <exclude>8.2.0</exclude>
+                <max>8.3.0</max>
+                <exclude>8.3.0</exclude>
             </php>
             <pearinstaller>
                 <min>1.4.0</min>

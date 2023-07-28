@@ -49,7 +49,7 @@ jobs:
                 - name: Generate Build Files
                   run: phpize
                 - name: Configure Build
-                  run: configure --enable-mcrypt --with-prefix=${{steps.setup-php.outputs.prefix}}
+                  run: configure --with-mcrypt --with-prefix=${{steps.setup-php.outputs.prefix}}
                 - name: Build
                   run: nmake
                 - name: Define Module Env

@@ -24,9 +24,9 @@
         <email>leigh@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2022-04-14</date>
+    <date>2023-12-12</date>
     <version>
-        <release>1.0.5</release>
+        <release>1.0.7</release>
         <api>1.0.0</api>
     </version>
     <stability>
@@ -35,7 +35,7 @@
     </stability>
     <license uri="http://www.php.net/license">PHP License</license>
     <notes>
-        - Make release to advertise PHP 8 support, which it already had.
+        - Make release to advertise PHP 8.3 support, which it already had.
     </notes>
     <contents>
         <dir name="/">
@@ -106,8 +106,8 @@
         <required>
             <php>
                 <min>7.2.0</min>
-                <max>8.2.0</max>
-                <exclude>8.2.0</exclude>
+                <max>8.4.0</max>
+                <exclude>8.4.0</exclude>
             </php>
             <pearinstaller>
                 <min>1.4.0</min>

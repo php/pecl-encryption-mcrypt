@@ -1,0 +1,19 @@
+{
+    "name": "php/mcrypt",
+    "type": "php-ext",
+    "license": "PHP-3.01",
+    "description": "Interface to the mcrypt library",
+    "require": {
+        "php": ">= 7.2.0, <= 8.4.0"
+    },
+    "php-ext": {
+        "extension-name": "mcrypt",
+        "configure-options": [
+            {
+                "name": "with-mcrypt",
+                "description": "Include mcrypt support",
+                "needs-value": true
+            }
+        ]
+    }
+}

@@ -4,15 +4,16 @@
     "license": "PHP-3.01",
     "description": "Bindings for the libmcrypt library.",
     "require": {
-        "php": ">=7.2"
+        "php": ">= 7.2.0, <= 8.6.0"
     },
     "php-ext": {
         "priority": 20,
+        "extension-name": "mcrypt",
         "configure-options": [
             {
                 "name": "with-mcrypt",
-                "description": "libmcrypt prefix?",
-                "needs-value": false
+                "description": "Include mcrypt support",
+                "needs-value": true
             }
         ]
     }

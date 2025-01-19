@@ -1,0 +1,19 @@
+{
+    "name": "pecl/mcrypt",
+    "type": "php-ext",
+    "license": "PHP-3.01",
+    "description": "Bindings for the libmcrypt library.",
+    "require": {
+        "php": ">=7.2"
+    },
+    "php-ext": {
+        "priority": 20,
+        "configure-options": [
+            {
+                "name": "with-mcrypt",
+                "description": "libmcrypt prefix?",
+                "needs-value": false
+            }
+        ]
+    }
+}

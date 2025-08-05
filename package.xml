@@ -24,9 +24,9 @@
         <email>leigh@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2023-12-12</date>
+    <date>2024-08-05</date>
     <version>
-        <release>1.0.7</release>
+        <release>1.0.8</release>
         <api>1.0.0</api>
     </version>
     <stability>
@@ -35,7 +35,7 @@
     </stability>
     <license uri="http://www.php.net/license">PHP License</license>
     <notes>
-        - Make release to advertise PHP 8.3 support, which it already had.
+        - Make changes to how the extension uses random, to make it work with PHP 8.4 (and PHP 8.5).
     </notes>
     <contents>
         <dir name="/">

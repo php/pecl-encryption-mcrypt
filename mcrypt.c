@@ -1419,7 +1419,7 @@ PHP_FUNCTION(mcrypt_create_iv)
 		n = (int)size;
 		while (size) {
 #if PHP_VERSION_ID >= 80400
-			iv[--size] = (char) (255.0 * php_mt_rand() / RAND_MAX);
+			iv[--size] = (char) php_mt_rand_range(0, 255);
 #else
 			iv[--size] = (char) (255.0 * php_rand() / RAND_MAX);
 #endif

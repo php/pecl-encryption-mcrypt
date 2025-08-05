@@ -38,7 +38,11 @@
 #include "php_ini.h"
 #include "php_globals.h"
 #include "ext/standard/info.h"
-#include "ext/standard/php_rand.h"
+#if PHP_VERSION_ID >= 80400
+# include "ext/random/php_random.h"
+#else
+# include "ext/standard/php_rand.h"
+#endif
 #include "zend_smart_str.h"
 #include "php_mcrypt_filter.h"
 
@@ -1414,7 +1418,11 @@ PHP_FUNCTION(mcrypt_create_iv)
 	} else {
 		n = (int)size;
 		while (size) {
+#if PHP_VERSION_ID >= 80400
+			iv[--size] = (char) (255.0 * php_mt_rand() / RAND_MAX);
+#else
 			iv[--size] = (char) (255.0 * php_rand() / RAND_MAX);
+#endif
 		}
 	}
 	RETVAL_STRINGL(iv, n);

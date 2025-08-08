@@ -41,7 +41,7 @@ jobs:
                 arch: ${{ matrix.arch }}
                 ts: ${{ matrix.ts }}
                 args: --with-mcrypt
-                libs: libmcrypt
+                libs: libmcrypt, dirent
 
     linux:
         runs-on: ubuntu-latest
@@ -61,7 +61,9 @@ jobs:
                     php-version: "${{ matrix.php }}"
                     coverage: none
                     tools: pecl
-                    deps: "libmcrypt"
+            
+            -   name: Install dependencies
+                run: sudo apt-get install -y libmcrypt-dev
 
             -   name: Compile
                 run: phpize && ./configure && make all

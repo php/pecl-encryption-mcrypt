@@ -140,6 +140,9 @@ static void php_mcrypt_filter_dtor(php_stream_filter *thisfilter)
 
 static php_stream_filter_ops php_mcrypt_filter_ops = {
     php_mcrypt_filter,
+#if PHP_VERSION_ID >= 80600
+    NULL, /* seek */
+#endif
     php_mcrypt_filter_dtor,
     "mcrypt.*"
 };
@@ -147,15 +150,24 @@ static php_stream_filter_ops php_mcrypt_filter_ops = {
 /* {{{ php_mcrypt_filter_create
  * Instantiate mcrypt filter
  */
+#if PHP_VERSION_ID >= 80600
+static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval *filterparams, bool persistent)
+#else
 static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval *filterparams, uint8_t persistent)
+#endif
 {
 	int encrypt = 1, iv_len, key_len, keyl, result;
 	const char *cipher = filtername + sizeof("mcrypt.") - 1;
 	zval *tmpzval;
 	MCRYPT mcrypt_module;
 	char *iv = NULL, *key = NULL;
+#if PHP_VERSION_ID >= 80600
+	char *algo_dir = zend_ini_string_literal("mcrypt.algorithms_dir");
+	char *mode_dir = zend_ini_string_literal("mcrypt.modes_dir");
+#else
 	char *algo_dir = INI_STR("mcrypt.algorithms_dir");
 	char *mode_dir = INI_STR("mcrypt.modes_dir");
+#endif
 	char *mode = "cbc";
 	php_mcrypt_filter_data *data;
 
@@ -265,7 +277,11 @@ static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval 
 	data->block_used = 0;
 	data->persistent = persistent;
 
+#if PHP_VERSION_ID >= 80600
+	return php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, PSFS_SEEKABLE_NEVER);
+#else
 	return php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent);
+#endif
 }
 /* }}} */
 

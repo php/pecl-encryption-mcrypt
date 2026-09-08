@@ -162,8 +162,8 @@ static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval 
 	MCRYPT mcrypt_module;
 	char *iv = NULL, *key = NULL;
 #if PHP_VERSION_ID >= 80600
-	char *algo_dir = zend_ini_string_literal("mcrypt.algorithms_dir");
-	char *mode_dir = zend_ini_string_literal("mcrypt.modes_dir");
+	const char *algo_dir = zend_ini_string_literal("mcrypt.algorithms_dir");
+	const char *mode_dir = zend_ini_string_literal("mcrypt.modes_dir");
 #else
 	char *algo_dir = INI_STR("mcrypt.algorithms_dir");
 	char *mode_dir = INI_STR("mcrypt.modes_dir");
@@ -219,7 +219,7 @@ static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval 
 		return NULL;
 	}
 
-	mcrypt_module = mcrypt_module_open((char *)cipher, algo_dir, mode, mode_dir);
+	mcrypt_module = mcrypt_module_open((char *)cipher, (char *)algo_dir, mode, (char *)mode_dir);
 	if (mcrypt_module == MCRYPT_FAILED) {
 		php_error_docref(NULL, E_WARNING, "Could not open encryption module");
 		return NULL;
@@ -278,7 +278,7 @@ static php_stream_filter *php_mcrypt_filter_create(const char *filtername, zval 
 	data->persistent = persistent;
 
 #if PHP_VERSION_ID >= 80600
-	return php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, PSFS_SEEKABLE_NEVER);
+	return php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent, PSFS_SEEKABLE_NEVER, PSFS_SEEKABLE_NEVER);
 #else
 	return php_stream_filter_alloc(&php_mcrypt_filter_ops, data, persistent);
 #endif
